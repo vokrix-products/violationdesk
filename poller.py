@@ -139,7 +139,7 @@ def poll():
                 "result": result,
             }
             result_bytes = json.dumps(result_doc, default=str, indent=2).encode("utf-8")
-            result_object_path = f"results/{job_id}.json"
+            result_object_path = f"{job_id}.json"
             r = requests.post(
                 f"{SUPABASE_URL}/storage/v1/object/results/{result_object_path}",
                 headers={
