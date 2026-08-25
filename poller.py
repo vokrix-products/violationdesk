@@ -89,7 +89,7 @@ def write_records(job, result):
             "customer_id": customer_id,
             "title": title,
             "status": status,
-            "details": json.dumps(details, default=str),
+            "details": details if isinstance(details, dict) else {},
             "source_file_path": job["input_file_path"],
         }
         if due_date:
